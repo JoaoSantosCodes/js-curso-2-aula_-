@@ -7,7 +7,7 @@ function exibirTextoNaTela(tag, texto) {
     // Função para exibir um texto na tela, recebendo uma tag HTML e um texto como parâmetros.
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', { rate: 1.2 });
 }
 
 function exibirMensagemInicial() {
@@ -50,10 +50,10 @@ function gerarNumeroAleatorio() {
         listaDeNumerosSorteados = [];
     }
 
-    if (listaDenumerosSorteados.includes(numeroEscolhido)) {
-        return gerarNumeroAleatorio ();
-    }else {
-        listaDenumerosSorteados.push(numeroEscolhido);
+    if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+    } else {
+        listaDeNumerosSorteados.push(numeroEscolhido);
         return numeroEscolhido;
     }
 }
