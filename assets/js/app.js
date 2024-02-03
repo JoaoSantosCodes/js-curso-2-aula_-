@@ -1,3 +1,5 @@
+let listaDeNumerosSorteados = [];
+let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio(); // Gera um número aleatório entre 1 e 10.
 let tentativas = 1; // Inicializa o contador de tentativas.
 
@@ -5,6 +7,7 @@ function exibirTextoNaTela(tag, texto) {
     // Função para exibir um texto na tela, recebendo uma tag HTML e um texto como parâmetros.
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
 function exibirMensagemInicial() {
@@ -40,7 +43,19 @@ function verificarChute() {
 
 function gerarNumeroAleatorio() {
     // Gera um número aleatório entre 1 e 10.
-    return parseInt(Math.random() * 10 + 1);
+    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+    let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
+
+    if (quantidadeDeElementosNaLista == 3) {
+        listaDeNumerosSorteados = [];
+    }
+
+    if (listaDenumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio ();
+    }else {
+        listaDenumerosSorteados.push(numeroEscolhido);
+        return numeroEscolhido;
+    }
 }
 
 function limparCampo() {
